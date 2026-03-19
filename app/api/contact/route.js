@@ -2,8 +2,6 @@ import { NextResponse } from "next/server";
 import { Resend } from "resend";
 import dns from "dns/promises";
 
-const resend = new Resend(process.env.RESEND_API_KEY);
-
 async function isEmailDomainValid(email) {
   try {
     const domain = email.split("@")[1];
@@ -20,6 +18,8 @@ function isEmailFormatValid(email) {
 }
 
 export async function POST(req) {
+  const resend = new Resend(process.env.RESEND_API_KEY);
+
   try {
     const { name, email, phone, subject, message } = await req.json();
 

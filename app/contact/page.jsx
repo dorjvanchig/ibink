@@ -13,9 +13,7 @@ import {
 } from "@ant-design/icons";
 
 const subjects = [
-  "Үнийн санал авах",
   "Демо үзэх",
-  "Техникийн дэмжлэг",
   "Сургалт, зөвлөгөө",
   "Нэмэлт систем хөгжүүлэх",
   "Бусад",
@@ -52,7 +50,7 @@ export default function ContactPage() {
     subject: "",
     message: "",
   });
-  const [status, setStatus] = useState("idle"); // idle | loading | success | error
+  const [status, setStatus] = useState("idle");
   const [errorMsg, setErrorMsg] = useState("");
 
   const handleChange = (e) =>
@@ -91,13 +89,10 @@ export default function ContactPage() {
           }}
         >
           <div className="max-w-content mx-auto">
-            <p className="font-mono text-[10px] tracking-[3px] uppercase text-[rgba(255,255,255,0.4)] mb-5">
-              Холбоо барих
-            </p>
             <h1 className="font-syne font-black text-[clamp(38px,6vw,72px)] leading-none tracking-[-0.04em] text-white max-w-2xl">
               Бидэнтэй{" "}
               <em className="font-normal italic text-[#5bb8f5]">
-                холбогдоорой
+                холбогдох
               </em>
             </h1>
             <p className="mt-5 text-[16px] text-[rgba(255,255,255,0.5)] max-w-md leading-[1.7] font-light">
@@ -108,7 +103,6 @@ export default function ContactPage() {
         </section>
         <section className="px-6 md:px-12 py-20 max-w-content mx-auto">
           <div className="grid grid-cols-1 lg:grid-cols-3 gap-12">
-            {/* Contact info */}
             <div className="space-y-4">
               <div className="mb-6">
                 <p className="font-mono text-[10px] tracking-[3px] uppercase text-[rgba(26,79,160,0.5)] mb-3">
@@ -128,10 +122,10 @@ export default function ContactPage() {
                     {item.icon}
                   </div>
                   <div>
-                    <p className="font-mono text-[9px] uppercase tracking-[1px] text-[rgba(13,38,87,0.4)] mb-0.5">
+                    <p className="font-mono text-[10px] uppercase tracking-[1px] text-[rgba(13,38,87,0.4)] mb-0.5">
                       {item.label}
                     </p>
-                    <p className="text-[13.5px] text-[#0d2657] font-medium leading-[1.55]">
+                    <p className="text-[14px] text-[#0d2657] font-medium leading-[1.55]">
                       {item.value}
                     </p>
                   </div>
@@ -270,6 +264,7 @@ export default function ContactPage() {
           </div>
         </section>
       </main>
+      
       <Footer />
     </>
   );

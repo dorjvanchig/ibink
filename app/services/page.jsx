@@ -1,7 +1,6 @@
 import Navbar from "@/app/components/Navbar";
 import Footer from "@/app/components/Footer";
 import CTA from "../components/CTA";
-import ScrollReveal from "../components/ScrollReveal";
 import {
   ClusterOutlined,
   CloudServerOutlined,
@@ -138,7 +137,6 @@ const process = [
 export default function ServicesPage() {
   return (
     <>
-     <ScrollReveal />
       <Navbar />
       <main className="min-h-screen bg-white">
         <section

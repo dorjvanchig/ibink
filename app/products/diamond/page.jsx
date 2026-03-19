@@ -3,7 +3,6 @@
 import { useEffect } from "react";
 import Navbar from "@/app/components/Navbar";
 import Footer from "@/app/components/Footer";
-import ScrollReveal from "../../components/ScrollReveal";
 import Link from "next/link";
 import Image from "next/image";
 import { useState } from "react";
@@ -588,7 +587,6 @@ export default function DiamondPage() {
   }, []);
   return (
     <>
-     <ScrollReveal />
       <Navbar />
       <main className="min-h-screen bg-white">
         <section

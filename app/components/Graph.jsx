@@ -19,14 +19,14 @@ export default function Graph() {
             },
           ].map((s, i) => (
             <div key={i} className="bg-white px-8 py-8">
-              <div className="font-syne font-black text-[clamp(28px,3.5vw,44px)] tracking-[-0.04em] text-[#0d2657] leading-none">
+              <div className="font-syne font-black text-[clamp(44px,3.5vw,56px)] tracking-[-0.04em] text-[#0d2657] leading-none">
                 {s.num.replace(/[^0-9]/g, "")}
                 <span className="text-[#2d7dd2]">
                   {s.num.replace(/[0-9]/g, "")}
                 </span>
               </div>
               <div className="mt-2">
-                <span className="block text-[16px] font-medium text-[#0d2657]">
+                <span className="block text-[14px] font-medium text-[#0d2657]">
                   {s.label}
                 </span>
                 <span className="text-[12.5px] text-[rgba(13,38,87,0.45)] font-light">

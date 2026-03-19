@@ -72,7 +72,7 @@ export default function Hero() {
           >
             {" "}
             <Image
-              src="/test2.jpg"
+              src="/"
               alt="Dashboard preview"
               width={1200}
               height={400}

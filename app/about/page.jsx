@@ -3,7 +3,6 @@ import Footer from "@/app/components/Footer";
 import Image from "next/image";
 import Link from "next/link";
 import CTA from "@/app/components/CTA";
-import ScrollReveal from "@/app/components/ScrollReveal";
 
 import {
   LineChartOutlined,
@@ -28,7 +27,6 @@ const activities = [
 export default function AboutPage() {
   return (
     <>
-      <ScrollReveal />
       <Navbar />
       <main className="min-h-screen bg-white">
         <section

@@ -3,7 +3,6 @@
 import { useEffect, useState } from "react";
 import Navbar from "@/app/components/Navbar";
 import Footer from "@/app/components/Footer";
-import ScrollReveal from "../../components/ScrollReveal";
 import Link from "next/link";
 import Image from "next/image";
 import { motion } from "framer-motion";
@@ -625,7 +624,6 @@ export default function EmeraldPage() {
   return (
     <>
       {" "}
-      <ScrollReveal />
       <Navbar />
       <main className="min-h-screen bg-white">
         <section

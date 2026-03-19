@@ -58,27 +58,27 @@ export default function Hero() {
           </Link>
         </div>
 
-        <div className="w-full max-w-5xl mx-auto rounded-t-2xl overflow-hidden shadow-2xl border border-white/10 border-b-0">
+        <div className="w-full max-w-5xl mx-auto shadow-2xl">
           <BorderGlow
             edgeSensitivity={30}
             glowColor="40 80 80"
             backgroundColor="#060010"
-            borderRadius={28}
+            borderRadius={16}
             glowRadius={40}
             glowIntensity={1}
             coneSpread={25}
             animated={false}
             colors={["#c084fc", "#f472b6", "#38bdf8"]}
+            className="w-full"
           >
-            {" "}
             <Image
-              src="/"
+              src="/test1.jpg"
               alt="Dashboard preview"
               width={1200}
               height={400}
-              style={{ width: "100%", height: "auto" }}
-              className="block"
+              style={{ width: "100%", height: "auto", display: "block" }}
               priority
+              loading="eager"
             />
           </BorderGlow>
         </div>

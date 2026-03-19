@@ -98,6 +98,8 @@ export default function Navbar() {
               alt="Interactive"
               width={36}
               height={36}
+              priority
+              loading="eager"
               style={{ width: "auto" }}
               className="transition-transform duration-300 group-hover:scale-105"
             />

@@ -20,8 +20,8 @@ const subjects = [
 ];
 
 const contactInfo = [
-  { icon: <PhoneOutlined />, label: "Утас", value: "976-7000-2626" },
-  { icon: <PhoneOutlined />, label: "Факс", value: "976-7013-0120" },
+  { icon: <PhoneOutlined />, label: "Утас", value: "+976-7000-2626" },
+  { icon: <PhoneOutlined />, label: "Факс", value: "+976-7013-0120" },
   { icon: <MailOutlined />, label: "И-мэйл", value: "support@ibi.mn" },
   {
     icon: <EnvironmentOutlined />,

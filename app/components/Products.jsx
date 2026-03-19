@@ -8,7 +8,7 @@ const products = [
   {
     slug: "diamond",
     name: "Diamond 5.0",
-    image: "/dimond55_cropped.png",
+    image: "/products/dimond55_cropped.png",
     surface: "rgba(45,125,210,0.12)",
     desc: "Том корпорациудад зориулсан дэлгэрэнгүй ERP систем. Санхүү, НББ, үйлдвэрлэл — бүгдийг нэг дороос.",
     modules: ["Санхүү", "Үйлдвэрлэл", "HR", "Агуулах", "CRM"],
@@ -16,7 +16,7 @@ const products = [
   {
     slug: "impact",
     name: "Impact",
-    image: "/impact_cropped.png",
+    image: "/products/impact_cropped.png",
     surface: "rgba(26,79,160,0.1)",
     desc: "Дунд хэмжээний бизнест зориулсан хурдан нэвтрүүлдэг, үр ашигтай ERP платформ.",
     modules: ["Борлуулалт", "Нягтлан", "Худалдан авалт", "Тайлан"],
@@ -24,7 +24,7 @@ const products = [
   {
     slug: "emerald",
     name: "Emerald",
-    image: "/emerald_cropped.png",
+    image: "/products/emerald_cropped.png",
     surface: "rgba(91,184,245,0.15)",
     desc: "Хөдөө аж ахуй, байгаль орчны салбарт тохирсон мэргэшсэн ERP шийдэл.",
     modules: ["Нөөц удирдлага", "Тарилга", "Лоджистик", "Мэдээлэл"],
@@ -32,7 +32,7 @@ const products = [
   {
     slug: "spinel",
     name: "Spinel",
-    image: "/spinel_cropped.png",
+    image: "/products/spinel_cropped.png",
     surface: "rgba(13,38,87,0.08)",
     desc: "Салбарт суурилсан нэмэлт систем — Diamond эсвэл Impact-ийн хажуугаар ажилладаг.",
     modules: ["Тусгай модуль", "API", "Интеграц", "Тайлан"],

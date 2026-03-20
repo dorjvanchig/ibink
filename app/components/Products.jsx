@@ -2,15 +2,13 @@ import Link from "next/link";
 import Image from "next/image";
 import { EyeOutlined } from "@ant-design/icons";
 
-
-
 const products = [
   {
     slug: "diamond",
     name: "Diamond 5.0",
     image: "/products/dimond55_cropped.png",
     surface: "rgba(45,125,210,0.12)",
-    desc: "Том корпорациудад зориулсан дэлгэрэнгүй ERP систем. Санхүү, НББ, үйлдвэрлэл — бүгдийг нэг дороос.",
+    desc: "Санхүү, НББ, үйлдвэрлэл — бүгдийг нэг дороос. Том корпорациудад зориулсан дэлгэрэнгүй ERP систем.",
     modules: ["Санхүү", "Үйлдвэрлэл", "HR", "Агуулах", "CRM"],
   },
   {
@@ -18,7 +16,7 @@ const products = [
     name: "Impact",
     image: "/products/impact_cropped.png",
     surface: "rgba(26,79,160,0.1)",
-    desc: "Дунд хэмжээний бизнест зориулсан хурдан нэвтрүүлдэг, үр ашигтай ERP платформ.",
+    desc: "Жижиг аж ахуйн нэгжүүдэд зориулсан хэрэглэхэд хялбар, үнэ хямд, цоо шинэ шийдэл бүхий санхүү НББ-ийн Импакт систем",
     modules: ["Борлуулалт", "Нягтлан", "Худалдан авалт", "Тайлан"],
   },
   {
@@ -26,7 +24,7 @@ const products = [
     name: "Emerald",
     image: "/products/emerald_cropped.png",
     surface: "rgba(91,184,245,0.15)",
-    desc: "Хөдөө аж ахуй, байгаль орчны салбарт тохирсон мэргэшсэн ERP шийдэл.",
+    desc: "Төсөвт байгууллагын санхүү бүртгэлийн бүх гүйлгээ, мөнгөн урсгалын хяналт, жилийн төсвийн удирдлага.",
     modules: ["Нөөц удирдлага", "Тарилга", "Лоджистик", "Мэдээлэл"],
   },
   {
@@ -34,7 +32,7 @@ const products = [
     name: "Spinel",
     image: "/products/spinel_cropped.png",
     surface: "rgba(13,38,87,0.08)",
-    desc: "Салбарт суурилсан нэмэлт систем — Diamond эсвэл Impact-ийн хажуугаар ажилладаг.",
+    desc: "Банк, ББСБ, хадгаламж зээлийн хоршооны үйл ажиллагаанд зориулсан зээл, хадгаламж, хүүний бүртгэлийн систем.",
     modules: ["Тусгай модуль", "API", "Интеграц", "Тайлан"],
   },
 ];
@@ -66,7 +64,6 @@ export default function Products() {
             href={`/products/${p.slug}`}
             className="group bg-white hover:bg-[#f0f5ff] transition-colors duration-250 p-9 flex flex-col"
           >
-
             <div className="flex items-start justify-between mb-5">
               <div
                 className="w-10 h-10 rounded-[10px] flex items-center justify-center overflow-hidden"

@@ -4,32 +4,26 @@ import Image from "next/image";
 import { useRef } from "react";
 
 const partners = [
-  { name: "1", logo: "/partners/partner1.png" },
-  { name: "2", logo: "/partners/partner1.png" },
-  { name: "3", logo: "/partners/partner1.png" },
-  { name: "4", logo: "/partners/partner1.png" },
-  { name: "5", logo: "/partners/partner1.png" },
-  { name: "6", logo: "/partners/partner1.png" },
-  { name: "7", logo: "/partners/partner1.png" },
-  { name: "8", logo: "/partners/partner1.png" },
-  { name: "9", logo: "/partners/partner1.png" },
-  { name: "10", logo: "/partners/partner1.png" },
-  { name: "11", logo: "/partners/partner1.png" },
-  { name: "12", logo: "/partners/partner1.png" },
-  { name: "13", logo: "/partners/partner1.png" },
-  { name: "14", logo: "/partners/partner1.png" },
-  { name: "15", logo: "/partners/partner1.png" },
-  { name: "16", logo: "/partners/partner1.png" },
-  { name: "17", logo: "/partners/partner1.png" },
-  { name: "18", logo: "/partners/partner1.png" },
-  { name: "19", logo: "/partners/partner1.png" },
-  { name: "20", logo: "/partners/partner1.png" },
-  { name: "21", logo: "/partners/partner1.png" },
-  { name: "22", logo: "/partners/partner1.png" },
-  { name: "23", logo: "/partners/partner1.png" },
-  { name: "24", logo: "/partners/partner1.png" },
-  { name: "25", logo: "/partners/partner1.png" },
-  { name: "26", logo: "/partners/partner1.png" },
+  { name: "Таван Богд Фүүд", logo: "/partners/5 bogd foods.svg" },
+  { name: "Таван Богд интэрнэйшил", logo: "/partners/5 bogd.svg" },
+  { name: "Abico", logo: "/partners/ABICO.svg" },
+  { name: "Алтан Заан ХХК", logo: "/partners/altan zaan.svg" },
+  { name: "Алтан Жолоо Импэкс", logo: "/partners/altanJoloo.svg" },
+  { name: "Арвайн Үндэс", logo: "/partners/arvain.png" },
+  { name: "Au Trade", logo: "/partners/au trade.svg" },
+  { name: "АЗ Хур", logo: "/partners/azHur.svg" },
+  { name: "Байгал", logo: "/partners/baigal.svg" },
+  { name: "Басса", logo: "/partners/bassa.svg" },
+  { name: "Баясах Хульж ХХК", logo: "/partners/baysahHulij.svg" },
+  { name: "Боса Импекс ХХК", logo: "/partners/bosaImpeks.svg" },
+  { name: "Дархан Ус", logo: "/partners/darhanUs.svg" },
+  { name: "Royal Foods", logo: "/partners/FOOD.svg" },
+  { name: "Gem International", logo: "/partners/gem.svg" },
+  { name: "GN Beverages", logo: "/partners/GNB.svg" },
+  { name: "МУЗН", logo: "/partners/MUZN.svg" },
+  { name: "Seeds Bakery", logo: "/partners/seeds garden.svg" },
+  { name: "Шувуутайн Гол ХХК", logo: "/partners/shuwutain gol.svg" },
+  { name: "Витафит Милк", logo: "/partners/vitafit.svg" },
 ];
 
 const all = [...partners, ...partners];
@@ -93,26 +87,28 @@ export default function Partners() {
 function LogoCard({ partner }) {
   return (
     <div
-      className="shrink-0 flex flex-col items-center justify-center gap-2 bg-white hover:bg-[#f0f5ff] border border-[rgba(26,79,160,0.1)] hover:border-[rgba(26,79,160,0.25)] rounded-xl px-5 py-4 transition-all duration-200 group cursor-default"
-      style={{ width: 130, height: 110 }}
+      className="shrink-0 flex flex-col items-center justify-between bg-white hover:bg-[#f0f5ff] border border-[rgba(26,79,160,0.1)] hover:border-[rgba(26,79,160,0.25)] rounded-xl transition-all duration-200 group cursor-default p-3"
+      style={{ width: 140, height: 140 }}
     >
-      <div className="w-12 h-12 flex items-center justify-center">
+      {/* Logo — fills available space above the name */}
+      <div className="relative w-full flex-1 min-h-0">
         <Image
           src={partner.logo}
           alt={partner.name}
-          width={48}
-          height={48}
+          fill
           draggable={false}
-          className="object-contain w-full h-full grayscale opacity-50 group-hover:grayscale-0 group-hover:opacity-100 transition-all duration-300 pointer-events-none select-none"
+          className="object-contain grayscale opacity-50 group-hover:grayscale-0 group-hover:opacity-100 transition-all duration-300 pointer-events-none select-none"
         />
       </div>
 
-      <span className="text-[12px] font-medium text-[rgba(13,38,87,0.5)] group-hover:text-[#0d2657] transition-colors duration-200 text-center leading-tight w-full truncate">
+      {/* Name */}
+      <span className="mt-2 text-[11px] font-medium text-[rgba(13,38,87,0.45)] group-hover:text-[#0d2657] transition-colors duration-200 text-center leading-tight w-full truncate shrink-0">
         {partner.name}
       </span>
     </div>
   );
 }
+
 function FadeMask() {
   return (
     <>

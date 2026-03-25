@@ -1,17 +1,5 @@
 import { NextResponse } from "next/server";
 import { Resend } from "resend";
-import dns from "dns/promises";
-
-async function isEmailDomainValid(email) {
-  try {
-    const domain = email.split("@")[1];
-    if (!domain) return false;
-    const records = await dns.resolveMx(domain);
-    return records && records.length > 0;
-  } catch {
-    return false;
-  }
-}
 
 function isEmailFormatValid(email) {
   return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
@@ -21,50 +9,41 @@ export async function POST(req) {
   const resend = new Resend(process.env.RESEND_API_KEY);
 
   try {
-    const { name, email, phone, subject, message } = await req.json();
+    const body = await req.json();
+    const { name, email, phone, subject, message } = body;
 
     if (!name || !email || !message) {
       return NextResponse.json(
         { error: "Нэр, и-мэйл, мессеж талбарыг бөглөнө үү" },
-        { status: 400 },
+        { status: 400 }
       );
     }
 
     if (!isEmailFormatValid(email)) {
       return NextResponse.json(
         { error: "И-мэйл хаяг буруу форматтай байна" },
-        { status: 400 },
-      );
-    }
-
-    const domainValid = await isEmailDomainValid(email);
-    if (!domainValid) {
-      return NextResponse.json(
-        {
-          error: "И-мэйл хаягийн домэйн байхгүй байна. Зөв и-мэйл оруулна уу.",
-        },
-        { status: 400 },
+        { status: 400 }
       );
     }
 
     if (name.trim().length < 2) {
       return NextResponse.json(
         { error: "Нэрээ бүтнээр оруулна уу" },
-        { status: 400 },
+        { status: 400 }
       );
     }
 
     if (message.trim().length < 10) {
       return NextResponse.json(
         { error: "Мессеж хэт богино байна. Дэлгэрэнгүй бичнэ үү." },
-        { status: 400 },
+        { status: 400 }
       );
     }
 
     if (phone && !/^[\d\s\-\+\(\)]{6,15}$/.test(phone)) {
       return NextResponse.json(
         { error: "Утасны дугаар буруу байна" },
-        { status: 400 },
+        { status: 400 }
       );
     }
 
@@ -91,24 +70,16 @@ export async function POST(req) {
                   <a href="mailto:${email}" style="color: #2d7dd2; text-decoration: none;">${email}</a>
                 </td>
               </tr>
-              ${
-                phone
-                  ? `
+              ${phone ? `
               <tr style="border-bottom: 1px solid #f0f5ff;">
                 <td style="padding: 10px 0; color: #888;">Утас</td>
                 <td style="padding: 10px 0; color: #0d2657;">${phone}</td>
-              </tr>`
-                  : ""
-              }
-              ${
-                subject
-                  ? `
+              </tr>` : ""}
+              ${subject ? `
               <tr style="border-bottom: 1px solid #f0f5ff;">
                 <td style="padding: 10px 0; color: #888;">Сэдэв</td>
                 <td style="padding: 10px 0; color: #0d2657;">${subject}</td>
-              </tr>`
-                  : ""
-              }
+              </tr>` : ""}
             </table>
           </div>
           <div style="background: white; border-radius: 12px; padding: 24px; border: 1px solid #dde8f8;">
@@ -125,14 +96,17 @@ export async function POST(req) {
     if (error) {
       console.error("Resend error:", error);
       return NextResponse.json(
-        { error: "Илгээхэд алдаа гарлаа" },
-        { status: 500 },
+        { error: "Илгээхэд алдаа гарлаа: " + error.message },
+        { status: 500 }
       );
     }
 
     return NextResponse.json({ success: true });
   } catch (err) {
-    console.error(err);
-    return NextResponse.json({ error: "Серверийн алдаа" }, { status: 500 });
+    console.error("Contact route error:", err);
+    return NextResponse.json(
+      { error: "Серверийн алдаа: " + (err.message || "Unknown") },
+      { status: 500 }
+    );
   }
 }

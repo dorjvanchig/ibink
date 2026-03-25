@@ -1,5 +1,6 @@
 "use client";
 
+import { rgba } from "framer-motion";
 import Image from "next/image";
 import { useRef } from "react";
 
@@ -55,7 +56,7 @@ export default function Partners() {
           ref={track1}
           className="flex gap-3 w-max"
           style={{
-            animation: "scrollLeft 40s linear infinite",
+            animation: "scrollLeft 70s linear infinite",
             willChange: "transform",
           }}
         >
@@ -71,7 +72,7 @@ export default function Partners() {
           ref={track2}
           className="flex gap-3 w-max"
           style={{
-            animation: "scrollRight 48s linear infinite",
+            animation: "scrollRight 85s linear infinite",
             willChange: "transform",
           }}
         >
@@ -87,22 +88,42 @@ export default function Partners() {
 function LogoCard({ partner }) {
   return (
     <div
-      className="shrink-0 flex flex-col items-center justify-between bg-white hover:bg-[#f0f5ff] border border-[rgba(26,79,160,0.1)] hover:border-[rgba(26,79,160,0.25)] rounded-xl transition-all duration-200 group cursor-default p-3"
-      style={{ width: 140, height: 140 }}
+      className="shrink-0 flex flex-col items-center justify-between bg-white hover:bg-[#f0f5ff] border border-[rgba(26,79,160,0.1)] hover:border-[rgba(26,79,160,0.25)] rounded-xl cursor-default hover:scale-110 hover:shadow-md hover:z-10"
+      style={{
+        width: 150,
+        height: 150,
+        padding: "12px 12px 10px",
+        transition:
+          "transform 0.3s ease, box-shadow 0.3s ease, background 0.2s ease, border-color 0.2s ease",
+      }}
     >
-      {/* Logo — fills available space above the name */}
-      <div className="relative w-full flex-1 min-h-0">
+      <div
+        style={{
+          width: 110,
+          height: 90,
+          position: "relative",
+          flexShrink: 0,
+          borderRadius: 8,
+          backgroundColor: "rgba(26, 79, 160, 0.3)",
+          padding: 6,
+          boxSizing: "border-box",
+        }}
+      >
         <Image
           src={partner.logo}
           alt={partner.name}
           fill
+          sizes="110px"
           draggable={false}
-          className="object-contain grayscale opacity-50 group-hover:grayscale-0 group-hover:opacity-100 transition-all duration-300 pointer-events-none select-none"
+          className="object-contain pointer-events-none select-none"
+          style={{ padding: 4 }}
         />
       </div>
 
-      {/* Name */}
-      <span className="mt-2 text-[11px] font-medium text-[rgba(13,38,87,0.45)] group-hover:text-[#0d2657] transition-colors duration-200 text-center leading-tight w-full truncate shrink-0">
+      <span
+        className="text-[11px] font-medium text-[rgba(13,38,87,0.45)] text-center leading-tight w-full truncate"
+        style={{ flexShrink: 0 }}
+      >
         {partner.name}
       </span>
     </div>

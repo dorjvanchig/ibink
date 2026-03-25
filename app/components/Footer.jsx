@@ -5,6 +5,7 @@ import {
   YoutubeOutlined,
   MailOutlined,
   PhoneOutlined,
+  MessageOutlined
 } from "@ant-design/icons";
 
 const footerLinks = [
@@ -44,6 +45,11 @@ const socials = [
     icon: <FacebookOutlined />,
     href: "https://www.facebook.com/InteractiveBI",
     label: "Facebook",
+  },
+  {
+    icon: <MessageOutlined />,
+    href: "https://m.me/InteractiveBI",
+    label: "Messenger",
   },
   {
     icon: <InstagramOutlined />,

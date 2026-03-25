@@ -6,6 +6,7 @@ import Link from "next/link";
 import { motion, AnimatePresence } from "framer-motion";
 import { usePathname } from "next/navigation";
 import { PhoneOutlined } from "@ant-design/icons";
+import LanguageSwitcher from "./LanguageSwitcher";
 
 const navLinks = [
   { label: "Бүтээгдэхүүн", href: "/products" },
@@ -135,6 +136,9 @@ export default function Navbar() {
                 </Link>
               </li>
             ))}
+            <li className="px-4 border-l border-[rgba(13,38,87,0.1)] ml-2">
+              <LanguageSwitcher />
+            </li>
             <li className="pl-2">
               <EncryptLink />
             </li>
@@ -214,7 +218,12 @@ export default function Navbar() {
                   </motion.div>
                 ))}
               </div>
-
+              <div className="px-4 py-2 border-t border-[rgba(13,38,87,0.06)] flex justify-between items-center">
+                <span className="text-[13px] font-medium text-[rgba(13,38,87,0.6)]">
+                  Хэл сонгох:
+                </span>
+                <LanguageSwitcher />
+              </div>
               <div className="h-px bg-[rgba(13,38,87,0.06)] mx-4" />
 
               <motion.div

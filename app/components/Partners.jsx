@@ -1,6 +1,5 @@
 "use client";
 
-import { rgba } from "framer-motion";
 import Image from "next/image";
 import { useRef } from "react";
 
@@ -104,7 +103,7 @@ function LogoCard({ partner }) {
           position: "relative",
           flexShrink: 0,
           borderRadius: 8,
-          backgroundColor: "rgba(26, 79, 160, 0.3)",
+          backgroundColor: "rgba(219, 236, 255, 1)",
           padding: 6,
           boxSizing: "border-box",
         }}

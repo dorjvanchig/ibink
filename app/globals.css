@@ -14,6 +14,32 @@ html {
     transform: translateX(-50%);
   }
 }
+body {
+  top: 0px !important; /* Дээрээс унадаг зайг арилгах */
+}
+
+/* Дээр гарч ирдэг Google-ийн баннерыг нуух */
+.skiptranslate > iframe.skiptranslate {
+  display: none !important;
+  visibility: hidden !important;
+}
+
+/* Хулгана хүрэхэд гарч ирдэг поп-апыг нуух */
+#goog-gt-tt {
+  display: none !important;
+  visibility: hidden !important;
+}
+
+/* Орчуулагдсан текст дээр хулгана очиход шар өнгөөр тодрохыг болиулах */
+.goog-text-highlight {
+  background-color: transparent !important;
+  box-shadow: none !important;
+}
+
+/* Google-ийн өөрийнх нь dropdown-ийг бүр мөсөн нуух */
+#google_translate_element {
+  display: none !important;
+}
 
 .marquee-track {
   animation: marquee 28s linear infinite;
@@ -71,7 +97,6 @@ html {
 .reveal-delay-3 {
   transition-delay: 0.3s;
 }
-
 
 .scrollbar-hide::-webkit-scrollbar {
   display: none;

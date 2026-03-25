@@ -3,6 +3,7 @@ import { Syne, DM_Sans, IBM_Plex_Mono } from "next/font/google";
 import Application from "./components/Application";
 import "./globals.css";
 import SmoothScroll from "./components/SmoothScoll";
+import Script from "next/script"
 
 const syne = Syne({
   subsets: ["latin"],
@@ -46,7 +47,25 @@ export default function RootLayout({
         {children}
 
         <Application />
+
+        <Script
+          src="https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"
+          strategy="afterInteractive"
+        />
+        <Script id="google-translate-config" strategy="afterInteractive">
+          {`
+            function googleTranslateElementInit() {
+              new google.translate.TranslateElement({
+                pageLanguage: 'mn',
+                includedLanguages: 'mn,en', // Only Mongolian and English
+                layout: google.translate.TranslateElement.InlineLayout.SIMPLE,
+                autoDisplay: false
+              }, 'google_translate_element');
+            }
+          `}
+        </Script>
       </body>
+      
     </html>
   );
 }

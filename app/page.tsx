@@ -10,6 +10,7 @@ import Partners from "././components/Partners";
 // import Graph from "./components/Graph";
 import Text from "./components/Text";
 import UIPreview from "./components/UIPreview";
+import Safety from "./components/Safety";
 
 export default function Home() {
   return (
@@ -27,6 +28,7 @@ export default function Home() {
           <UIPreview />
           <Products />
           <Services />
+          <Safety/>
           <Partners />
         </div>
       </main>
